@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and filter your complete transaction history on Nexus Bank.">
+    <title>Transaction History - Nexus Bank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="logo">🏦 Nexus Bank</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card card-large">
+            <h2>📋 Transaction History</h2>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                <div class="filter-section" style="margin-bottom: 0;">
+                    <label for="filterType"><strong>Filter by Type:</strong></label>
+                    <select id="filterType">
+                        <option value="All">All Transactions</option>
+                        <option value="Deposit">Deposit</option>
+                        <option value="Withdraw">Withdraw</option>
+                        <option value="Transfer">Transfer</option>
+                    </select>
+                </div>
+                <button id="downloadBtn" class="btn-secondary" style="font-size: 13px; padding: 8px 16px;">📥 Download Statement</button>
+            </div>
+
+            <div style="overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Date & Time</th>
+                            <th>Transaction Type</th>
+                            <th>Amount</th>
+                            <th>Balance After</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <!-- History rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="noHistoryMsg" style="padding: 32px; text-align: center; color: var(--text-muted); display: none; font-size: 14px;">
+                No transactions found.
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 12px;">
+                <p id="transactionCount" style="font-size: 13px; color: var(--text-muted);"></p>
+                <a href="dashboard.html" class="btn-secondary">← Back to Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Web Technology Lab Project - YCCE, Nagpur &copy; 2026</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/history.js"></script>
+</body>
+</html>

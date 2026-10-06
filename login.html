@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to your Nexus Bank account. Access your dashboard, transactions, and more.">
+    <title>Login - Nexus Bank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🏦 Nexus Bank</a>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>Account Login</h2>
+            
+            <div id="errorMsg" class="alert alert-error"></div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="accNumber">Account Number</label>
+                    <input type="text" id="accNumber" placeholder="Enter 10-digit Account Number">
+                    <div id="accError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pin">4-Digit PIN</label>
+                    <input type="password" id="pin" placeholder="Enter PIN">
+                    <div id="pinError" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="color: var(--text-secondary); font-size: 14px;">New user? <a href="register.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Create an account</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Web Technology Lab Project - YCCE, Nagpur &copy; 2026</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

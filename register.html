@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your Nexus Bank account. Secure registration with instant account number generation.">
+    <title>Register - Nexus Bank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🏦 Nexus Bank</a>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>Create an Account</h2>
+            
+            <div id="successMsg" class="alert alert-success"></div>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter full name">
+                    <div id="nameError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="text" id="mobile" placeholder="10-digit mobile number">
+                    <div id="mobileError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="example@mail.com">
+                    <div id="emailError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="Enter your full address"></textarea>
+                    <div id="addressError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="accType">Account Type</label>
+                    <select id="accType">
+                        <option value="">-- Select Account Type --</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+                    </select>
+                    <div id="accTypeError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pin">4-Digit PIN</label>
+                    <input type="password" id="pin" placeholder="Enter 4-digit PIN">
+                    <div id="pinError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPin">Confirm PIN</label>
+                    <input type="password" id="confirmPin" placeholder="Re-enter PIN">
+                    <div id="confirmPinError" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submitBtn">Register</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 20px;" id="loginLinkContainer">
+                <p style="color: var(--text-secondary); font-size: 14px;">Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Login here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Web Technology Lab Project - YCCE, Nagpur &copy; 2026</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Withdraw money from your Nexus Bank account securely.">
+    <title>Withdraw Money - Nexus Bank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="logo">🏦 Nexus Bank</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>💸 Withdraw Money</h2>
+            <div class="balance-box" style="margin-bottom: 24px;">
+                <p>Available Balance</p>
+                <h3 id="displayBalance">₹ 0.00</h3>
+            </div>
+            
+            <div id="successMsg" class="alert alert-success"></div>
+            
+            <form id="withdrawForm">
+                <div class="form-group">
+                    <label for="amount">Enter Amount to Withdraw (₹)</label>
+                    <input type="number" id="amount" placeholder="e.g. 1000">
+                    <div id="amountError" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn-primary">Withdraw Now</button>
+                <a href="dashboard.html" class="btn-secondary" style="margin-top: 10px; width: 100%; display: block;">← Back to Dashboard</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Web Technology Lab Project - YCCE, Nagpur &copy; 2026</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and edit your Nexus Bank profile, change PIN, or manage your account.">
+    <title>Profile - Nexus Bank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="logo">🏦 Nexus Bank</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main style="flex-direction: column; align-items: center; gap: 24px;">
+        <!-- Profile Card -->
+        <div class="card">
+            <h2>👤 User Profile</h2>
+            
+            <div id="successMsg" class="alert alert-success"></div>
+            
+            <form id="profileForm">
+                <div class="form-group">
+                    <label>Account Number (Non-editable)</label>
+                    <input type="text" id="profAccNumber" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label>Account Type (Non-editable)</label>
+                    <input type="text" id="profAccType" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="profName">Full Name</label>
+                    <input type="text" id="profName" disabled>
+                    <div id="nameError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profMobile">Mobile Number</label>
+                    <input type="text" id="profMobile" disabled>
+                    <div id="mobileError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profEmail">Email Address</label>
+                    <input type="email" id="profEmail" disabled>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profAddress">Address</label>
+                    <textarea id="profAddress" disabled></textarea>
+                    <div id="addressError" class="error-message"></div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-top: 24px;">
+                    <button type="button" id="editBtn" class="btn-secondary" style="flex: 1;">✏️ Edit Profile</button>
+                    <button type="submit" id="saveBtn" class="btn-primary" style="flex: 1; display: none; margin-top: 0;">💾 Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Change PIN Card -->
+        <div class="card">
+            <h2>🔒 Change PIN</h2>
+            
+            <div id="pinSuccessMsg" class="alert alert-success"></div>
+            <div id="pinErrorMsg" class="alert alert-error"></div>
+            
+            <form id="changePinForm">
+                <div class="form-group">
+                    <label for="currentPin">Current PIN</label>
+                    <input type="password" id="currentPin" placeholder="Enter current 4-digit PIN">
+                    <div id="currentPinError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newPin">New PIN</label>
+                    <input type="password" id="newPin" placeholder="Enter new 4-digit PIN">
+                    <div id="newPinError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmNewPin">Confirm New PIN</label>
+                    <input type="password" id="confirmNewPin" placeholder="Re-enter new PIN">
+                    <div id="confirmNewPinError" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn-primary">Change PIN</button>
+            </form>
+        </div>
+
+        <!-- Danger Zone Card -->
+        <div class="card" style="border: 1.5px solid #fecaca;">
+            <h2 style="color: var(--accent-red);">⚠️ Danger Zone</h2>
+            <p style="color: var(--text-secondary); font-size: 14px; text-align: center; margin-bottom: 20px;">
+                Deleting your account is permanent and cannot be undone. All your data and transaction history will be lost.
+            </p>
+            <button type="button" id="deleteAccountBtn" class="btn-danger">🗑️ Delete My Account</button>
+        </div>
+    </main>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <h3 id="modalTitle" style="color: var(--accent-red); margin-bottom: 12px;">Confirm Deletion</h3>
+            <p id="modalMessage" style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;"></p>
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="modalPinInput">Enter your PIN to confirm</label>
+                <input type="password" id="modalPinInput" placeholder="4-digit PIN">
+                <div id="modalPinError" class="error-message"></div>
+            </div>
+            <div style="display: flex; gap: 12px;">
+                <button id="modalCancelBtn" class="btn-secondary" style="flex: 1;">Cancel</button>
+                <button id="modalConfirmBtn" class="btn-danger" style="flex: 1;">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Web Technology Lab Project - YCCE, Nagpur &copy; 2026</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
